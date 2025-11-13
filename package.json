@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start --webpack",
+    "build-wasm": "cd nautilus-wasm && ./build.sh"
   },
   "dependencies": {
     "@mysten/dapp-kit": "^0.19.8",
