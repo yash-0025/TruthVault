@@ -7,6 +7,7 @@ import { createNetworkConfig, SuiClientProvider, WalletProvider } from "@mysten/
 import { getFullnodeUrl } from "@mysten/sui/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navbar from "@/components/Navbar";
+import PinnedNotice from "@/components/PinnedNotice";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <SuiClientProvider networks={networkConfig} defaultNetwork="testnet">
             <WalletProvider autoConnect preferredWallets={['Slush Wallet']}>
               <Navbar />
+              <PinnedNotice />
               {children}
             </WalletProvider>
           </SuiClientProvider>

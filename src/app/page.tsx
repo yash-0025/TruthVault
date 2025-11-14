@@ -1,3 +1,4 @@
+import RoadmapSection from '@/components/RoadmapSection';
 import { Shield, Lock, Zap, FileCheck, ArrowRight, CheckCircle, Cpu, Database, Award, Users, Globe, TrendingUp } from 'lucide-react';
 
 export default function Homepage() {
@@ -227,6 +228,8 @@ export default function Homepage() {
           </div>
         </div>
       </section>
+
+      <RoadmapSection />
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
