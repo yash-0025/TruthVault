@@ -58,8 +58,36 @@ export default function RunAIButton() {
       console.log("✅ AI Result:", output);
       setResult(output);
 
+      // Encrypt the result before storing
+      console.log("🔒 Encrypting result...");
+      const { encryptCSV } = await import('@/lib/seal');
+      const { encryptedObject: encryptedResult, policyId: resultPolicyId } = await encryptCSV(output, account.address!);
+
+      // Upload encrypted result to Walrus
+      console.log("☁️ Uploading encrypted result to Walrus...");
+      const res = await fetch('/api/walrus-upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          blob: Array.from(encryptedResult),
+          publisher: process.env.NEXT_PUBLIC_WALRUS_PUBLISHER!,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+
+      const resultBlobId = data.blobId;
+      console.log("✅ Encrypted result stored, blobId:", resultBlobId);
+
+      // Store result blob_id and policy_id for later decryption
+      localStorage.setItem('result_blob_id', resultBlobId);
+      localStorage.setItem('result_policy_id', resultPolicyId);
+
       console.log("🎨 Minting NFT...");
-      await mintProof(blobId, policyId, output, proof);
+      // Only pass blob_id references, not plaintext data
+      // resultPolicyId is the encryption policy for the result
+      await mintProof(blobId, policyId, resultBlobId, resultPolicyId, proof);
 
     } catch (err: any) {
       console.error("❌ Error:", err);

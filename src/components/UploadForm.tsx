@@ -107,18 +107,21 @@ export default function UploadForm() {
   };
 
   const handleClear = () => {
-    // Clear all stored data including proof
+    // Clear all stored data including proof and encrypted results
     localStorage.removeItem('blob_id');
     localStorage.removeItem('policy_id');
     localStorage.removeItem('user_csv');
     localStorage.removeItem('original_file');
     localStorage.removeItem('last_proof');
     localStorage.removeItem('proof_timestamp');
+    localStorage.removeItem('proof_object_id');
+    localStorage.removeItem('result_blob_id');
+    localStorage.removeItem('result_policy_id');
     
     setUploadedFile(null);
     setStatus('');
     
-    console.log("🗑️ Cleared all data including previous proof");
+    console.log("🗑️ Cleared all data including previous proof and encrypted results");
     
     // Trigger event to update all components
     window.dispatchEvent(new Event('fileUploaded'));

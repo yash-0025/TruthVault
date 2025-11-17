@@ -160,7 +160,9 @@ export default function About() {
                   "One upload works for all applications",
                   "Zero-knowledge proofs protect privacy [Will be added in the future]",
                   "Blockchain-secured, forgery impossible",
-                  "QR codes accepted universally"
+                  "QR codes accepted universally",
+                  "Access control - grant temporary permissions",
+                  "Share proof links with institutions"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start space-x-3">
                     <span className="text-green-500 mt-1">•</span>

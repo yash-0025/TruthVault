@@ -1,4 +1,4 @@
-import { Upload, Lock, Cpu, Shield, Database, CheckCircle, QrCode, FileCheck, Wallet, ArrowRight } from 'lucide-react';
+import { Upload, Lock, Cpu, Shield, Database, CheckCircle, QrCode, FileCheck, Wallet, ArrowRight, Share2, Users } from 'lucide-react';
 
 export default function HowItWorks() {
   const steps = [
@@ -60,11 +60,19 @@ export default function HowItWorks() {
     },
     {
       number: "08",
+      icon: <Share2 className="w-12 h-12" />,
+      title: "Share & Control Access",
+      description: "Share proof links with institutions. Grant temporary access to decrypt data. You control who sees what.",
+      tech: "Access Control & Sharing",
+      color: "from-teal-500 to-cyan-500"
+    },
+    {
+      number: "09",
       icon: <FileCheck className="w-12 h-12" />,
       title: "Use Everywhere",
       description: "Present your proof for loans, insurance, visas, or jobs. Instant verification, zero hassle.",
       tech: "Multi-purpose Acceptance",
-      color: "from-teal-500 to-cyan-500"
+      color: "from-indigo-500 to-purple-500"
     }
   ];
 
@@ -221,7 +229,8 @@ export default function HowItWorks() {
                 { title: "Walrus Storage", desc: "Encrypted blob stored on decentralized network", color: "bg-orange-500" },
                 { title: "Nautilus AI", desc: "Zero-knowledge computation on encrypted data [ZK proofs will be added in future]", color: "bg-green-500" },
                 { title: "Sui Blockchain", desc: "Proof minted as NFT with immutable record", color: "bg-indigo-500" },
-                { title: "QR Code", desc: "Shareable verification delivered to you", color: "bg-pink-500" }
+                { title: "QR Code & Share Links", desc: "Shareable verification delivered to you with access control", color: "bg-pink-500" },
+                { title: "Access Control", desc: "Grant temporary permissions to institutions to decrypt and view data", color: "bg-teal-500" }
               ].map((step, idx) => (
                 <div key={idx} className="relative">
                   <div className="flex items-center space-x-4">

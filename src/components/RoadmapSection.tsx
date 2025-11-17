@@ -16,7 +16,10 @@ export default function RoadmapSection() {
         { text: "Basic health report upload", completed: true, icon: <Zap className="w-4 h-4" /> },
         { text: "AI risk assessment", completed: true, icon: <Heart className="w-4 h-4" /> },
         { text: "Blockchain proof minting", completed: true, icon: <CheckCircle className="w-4 h-4" /> },
-        { text: "QR code generation", completed: true, icon: <Code className="w-4 h-4" /> }
+        { text: "QR code generation", completed: true, icon: <Code className="w-4 h-4" /> },
+        { text: "Access control system", completed: true, icon: <Users className="w-4 h-4" /> },
+        { text: "Share proof links", completed: true, icon: <Globe className="w-4 h-4" /> },
+        { text: "View & decrypt data", completed: true, icon: <Database className="w-4 h-4" /> }
       ]
     },
     {

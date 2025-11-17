@@ -118,7 +118,7 @@ export default function Homepage() {
                 <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200">
                   <div className="text-4xl mb-2">✅</div>
                   <h3 className="font-bold text-lg mb-2">3. Get Proof</h3>
-                  <p className="text-sm text-gray-600">NFT-based verification</p>
+                  <p className="text-sm text-gray-600">NFT-based verification with share links & access control</p>
                 </div>
               </div>
             </div>
@@ -215,7 +215,7 @@ export default function Homepage() {
               { name: "Sui Blockchain", desc: "Fast, secure transactions", color: "from-blue-500 to-cyan-500" },
               { name: "Mysten Seal", desc: "End-to-end encryption", color: "from-purple-500 to-pink-500" },
               { name: "Walrus Storage", desc: "Decentralized data", color: "from-orange-500 to-red-500" },
-              { name: "Nautilus AI", desc: "Currently we have scratch AI model called Nautilus [ Will be adding ZK proofs in future]", color: "from-green-500 to-emerald-500" }
+              { name: "Nautilus AI", desc: "AI-powered health risk assessment [ZK proofs will be added in future]", color: "from-green-500 to-emerald-500" }
             ].map((tech, idx) => (
               <div key={idx} className="text-center">
                 <div className={`bg-gradient-to-br ${tech.color} w-20 h-20 rounded-2xl mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold shadow-lg`}>

@@ -377,7 +377,7 @@ Sui Wallet (Sui Wallet, Suiet, or Ethos)
 ```bash
 # Clone the repository
 git clone https://github.com/yash-0025/TruthVault
-cd TruthVault/
+cd TruthVault/client
 
 # Install dependencies
 npm install
